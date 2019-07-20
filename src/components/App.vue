@@ -67,8 +67,8 @@
         options: {},
         investment: 1,
         equity: 10,
-        premoney: 10,
-        postmoney: 11,
+        premoney: 9,
+        postmoney: 10,
       }
     },
 
