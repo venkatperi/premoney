@@ -7,12 +7,12 @@
       </div>
 
       <div class="col float-right text-right">
-        <a class="icon" href="https://en.wikipedia.org/wiki/Roman_numerals" target="_blank">
-          <font-awesome-icon :icon="['fab', 'wikipedia-w']" size="sm"/>
-        </a>
-        <a class="icon" href="https://github.com/venkatperi/dec2roman" target="_blank">
-          <font-awesome-icon :icon="['fab', 'github']" size="sm"/>
-        </a>
+<!--        <a class="icon" href="https://en.wikipedia.org/wiki/Roman_numerals" target="_blank">-->
+<!--          <font-awesome-icon :icon="['fab', 'wikipedia-w']" size="sm"/>-->
+<!--        </a>-->
+<!--        <a class="icon" href="https://github.com/venkatperi/dec2roman" target="_blank">-->
+<!--          <font-awesome-icon :icon="['fab', 'github']" size="sm"/>-->
+<!--        </a>-->
       </div>
 
     </div>
