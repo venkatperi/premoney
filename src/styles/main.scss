@@ -1,0 +1,79 @@
+//@import 'variables/index';
+//@import 'base/index';
+//@import '../../node_modules/bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Judson|Share+Tech+Mono|News+Cycle');
+@import '../../node_modules/toastr/toastr';
+
+/*
+ * Base structure
+ */
+html,
+body {
+  font-family: 'Judson', serif;
+}
+
+body {
+  color: #333;
+  width: 100%;
+}
+
+.container-fluid {
+  //padding: 0;
+}
+
+a, a.icon {
+  &:hover, &:focus {
+    color: magenta;
+    text-decoration: none;
+  }
+}
+
+a.icon {
+  color: #666;
+  line-height: 27px;
+  padding: 0 5px;
+}
+
+/*
+ * Footer
+ */
+.copyright {
+  margin-top: 1rem;
+  font-family: "Share Tech Mono", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  color: #aaa;
+}
+
+.mastfoot {
+  text-align: center;
+}
+
+/*
+ * Cover
+ */
+.cover-container {
+  max-width: 30em;
+  width: 30em;
+}
+
+.cover {
+}
+
+.cover-heading {
+  font-family: 'Judson', serif;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+}
+
+#content {
+  //margin-top: 2rem;
+}
+
+#clippy {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+}
