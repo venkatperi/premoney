@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid p-0 ">
+
     <div class="row">
       <div class="col">
         <span class="hint">Proposed Investment</span>
@@ -32,7 +33,7 @@
 
     <div class="row">
       <div class="col">
-        <textarea class="input" :rows="1" v-model="premoney" readonly>
+        <textarea class="input" :rows="1" v-model="premoney">
         </textarea>
       </div>
     </div>
@@ -51,15 +52,15 @@
 </template>
 
 <script>
-  import Converter from 'components/Converter';
   import LinkLogo from 'images/Link.svg';
+
+  const _ = require( 'lodash' );
 
   export default {
     name: 'app',
 
     components: {
       LinkLogo,
-      Converter,
     },
 
     data: function () {
@@ -69,6 +70,7 @@
         equity: 10,
         premoney: 9,
         postmoney: 10,
+        changing: false,
       }
     },
 
@@ -77,22 +79,41 @@
 
     watch: {
       investment() {
-        let e = Number( this.equity ) / 100
-        this.premoney = (1 - e) / e * Number( this.investment );
+        if ( !this.changing ) {
+          this.doChange()
+          let e = Number( this.equity ) / 100
+          this.premoney = (1 - e) / e * Number( this.investment );
+        }
       },
 
       equity() {
-        let e = Number( this.equity ) / 100
-        this.premoney = (1 - e) / e * Number( this.investment );
+        if ( !this.changing ) {
+          this.doChange()
+          let e = Number( this.equity ) / 100
+          this.premoney = ((1 - e) / e * Number( this.investment ))
+        }
       },
 
       premoney() {
+        let pm = Number( this.premoney )
+        let i = Number( this.investment )
+        if ( !this.changing ) {
+          this.doChange()
+          this.equity = (i / (pm + i) * 100).toFixed(2)
+        }
         this.postmoney = Number( this.premoney ) + Number( this.investment )
       },
 
     },
 
-    methods: {},
+    methods: {
+      doChange() {
+        this.changing = true
+        _.debounce( () => {
+          this.changing = false
+        }, 10, { leading: false } )()
+      },
+    },
   }
 </script>
 
@@ -131,6 +152,10 @@
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.25em;
     }
+  }
+
+  .error {
+    background: rgba(200, 100, 100, 0.25) !important;
   }
 
   label, .message, .hint {
