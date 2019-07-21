@@ -82,7 +82,7 @@
         if ( !this.changing ) {
           this.doChange()
           let e = Number( this.equity ) / 100
-          this.premoney = (1 - e) / e * Number( this.investment );
+          this.premoney = ((1 - e) / e * Number( this.investment )).toFixed(2)
         }
       },
 
@@ -90,7 +90,7 @@
         if ( !this.changing ) {
           this.doChange()
           let e = Number( this.equity ) / 100
-          this.premoney = ((1 - e) / e * Number( this.investment ))
+          this.premoney = ((1 - e) / e * Number( this.investment )).toFixed(2)
         }
       },
 
@@ -101,7 +101,8 @@
           this.doChange()
           this.equity = (i / (pm + i) * 100).toFixed(2)
         }
-        this.postmoney = Number( this.premoney ) + Number( this.investment )
+        this.postmoney =
+          (Number( this.premoney ) + Number( this.investment )).toFixed(2)
       },
 
     },
