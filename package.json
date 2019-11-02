@@ -30,7 +30,7 @@
     "vue-router": "^3.0.1",
     "vue-svg-loader": "^0.5.0",
     "vue-textarea-autosize": "^1.0.4",
-    "webpack-bundle-analyzer": "^2.13.1"
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0-rc.1",
